@@ -1,0 +1,13 @@
+--- src/testNotWorking.php	2018-05-03 14:15:28.599892468 +0200
++++ src/testWorking.php	2018-05-03 14:15:52.664206857 +0200
+@@ -9,9 +9,8 @@
+
+ /** @var Customer $customer1 */
+ $customer1 = $entityManager->createQueryBuilder()
+-    ->select('c, s')
++    ->select('c')
+     ->from(Customer::class, 'c')
+-    ->leftJoin('c.servers', 's')
+     ->where('c.id = 1')
+     ->getQuery()
+     ->getSingleResult();

@@ -1,0 +1,21 @@
+SELECT c0_.id AS id_0 FROM Customer c0_ WHERE c0_.id = 1
+SELECT t0.id AS id_1, t0.customer_id AS customer_id_2 FROM Server t0 WHERE t0.customer_id = ?
+array (
+  0 => 1,
+)
+"START TRANSACTION"
+UPDATE Server SET customer_id = ? WHERE id = ?
+array (
+  0 => NULL,
+  1 => 1,
+)
+UPDATE Server SET customer_id = ? WHERE id = ?
+array (
+  0 => NULL,
+  1 => 2,
+)
+"COMMIT"
+
+    SELECT id, customer_id
+    FROM server
+    ORDER BY id

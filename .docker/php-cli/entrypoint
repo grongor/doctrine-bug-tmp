@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+USER_ID=$(stat --format %u .)
+GROUP_ID=$(stat --format %g .)
+
+# some bug in MacOS - volume mounted as root ... it works, so let's not touch it ...
+if [[ ${USER_ID} -ne 0 ]]; then
+    usermod -u ${USER_ID} www-data
+    groupmod -g ${GROUP_ID} www-data
+fi
+
+usermod -d /home/www-data www-data
+
+gosu www-data "$@"

@@ -1,0 +1,10 @@
+SELECT c0_.id AS id_0, s1_.id AS id_1, s1_.customer_id AS customer_id_2 FROM Customer c0_ LEFT JOIN Server s1_ ON c0_.id = s1_.customer_id WHERE c0_.id = 1
+"START TRANSACTION"
+"COMMIT"
+
+    SELECT id, customer_id
+    FROM server
+    ORDER BY id
+
+
+Warning: assert(): assert($serversScalar === [1 => null, 2 => null]) failed in /app/src/testNotWorking.php on line 43
