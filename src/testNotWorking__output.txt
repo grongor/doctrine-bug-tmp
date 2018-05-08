@@ -7,4 +7,6 @@ SELECT c0_.id AS id_0, s1_.id AS id_1, s1_.customer_id AS customer_id_2 FROM Cus
     ORDER BY id
 
 
-Warning: assert(): assert($serversScalar === [1 => null, 2 => null]) failed in /app/src/testNotWorking.php on line 43
+Warning: assert(): assert($serversScalar[0]['customer_id'] === null) failed in /app/src/testNotWorking.php on line 44
+
+Warning: assert(): assert($serversScalar[1]['customer_id'] === null) failed in /app/src/testNotWorking.php on line 46

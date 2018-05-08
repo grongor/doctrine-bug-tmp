@@ -38,9 +38,10 @@ $serversScalar = $entityManager->getConnection()->executeQuery('
     SELECT id, customer_id
     FROM server
     ORDER BY id
-')->fetchAll(PDO::FETCH_KEY_PAIR);
+')->fetchAll();
 
-assert($serversScalar === [
-    1 => null,
-    2 => null,
-]);
+assert(count($serversScalar) === 2);
+assert($serversScalar[0]['id'] === 1);
+assert($serversScalar[0]['customer_id'] === null);
+assert($serversScalar[1]['id'] === 2);
+assert($serversScalar[1]['customer_id'] === null);
